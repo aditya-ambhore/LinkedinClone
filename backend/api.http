@@ -1,0 +1,73 @@
+POST http://localhost:9090/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "demo",
+    "password": "d",
+    "email": "d@gmail.com",
+    "name": "d"
+}
+
+###
+
+POST http://localhost:9090/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":  "demo@gmail.com",
+    "password":  "demo"
+
+
+}
+
+
+
+###
+
+
+POST http://localhost:9090/get_user_and_profile  HTTP/1.1 
+Content-Type: application/json
+
+{
+  "token": "93462b4ea6a0c645334e5cac94db17e7297d5422449e986f6687e2308d1051c3"
+}
+
+
+###
+
+POST http://localhost:9090/update_profile_data  HTTP/1.1 
+Content-Type: application/json
+
+
+{
+   "token": "07413deca497daa75759a8be3db3b4e6252aec42a33247114a64e5a3076d3047",
+   "bio": "Software Developer at google",
+   "currentPost": "SDE",
+   "pastWork": [
+    {
+      "company": "Google",
+      "position": "SDE",
+      "years": "1"
+    }
+   ], 
+   "education": [
+    {
+      "school": "IIT",
+      "degree": "B.Tech",
+      "fieldOfStudy": "CSE"
+    }
+   ]
+}
+
+
+### 
+
+GET http://localhost:9090/user/get_all_users   HTTP/1.1
+
+
+
+### 
+GET http://localhost:9090/posts   HTTP/1.1
+
+
+
