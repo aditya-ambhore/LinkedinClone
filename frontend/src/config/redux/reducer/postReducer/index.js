@@ -32,9 +32,7 @@ const postSlice = createSlice({
         state.isLoading = false;
         state.isError = false;
         state.postfetched = true;
-        console.log(action.payload.posts)
         state.posts = action.payload.posts.reverse();
-        console.log(`HERE`, state.posts)
       })
       .addCase(getAllPosts.rejected, (state, action) => {
         state.isLoading = false;
@@ -42,12 +40,13 @@ const postSlice = createSlice({
         state.message = action.payload;
       })
       .addCase(getAllComments.fulfilled, (state, action) => {
+        console.log("Payload received:", action.payload);
         state.postId = action.payload.post_id;
       });
   },
 });
 
-export const {resetPostId} = postSlice.actions;
+export  const { reset, resetPostId } = postSlice.actions;
 
 export default postSlice.reducer;
 
